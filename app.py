@@ -35,9 +35,9 @@ if st.button("Analyze Expense"):
         st.error("Please enter your context or reasoning!")
         st.stop()
 
-    temp_path = "/mnt/data/" + uploaded_file.name
-    with open(temp_path, "wb") as f:
-        f.write(uploaded_file.read())
+    bytes_data = uploaded_file.read()
+    encoded_file = base64.b64encode(bytes_data).decode("utf-8")
+    data_url = f"data:application/octet-stream;base64,{encoded_file}"
 
     st.info("Analyzing...")
 
@@ -57,7 +57,7 @@ if st.button("Analyze Expense"):
                     "role": "user",
                     "content": [
                         {"type": "text", "text": user_prompt},
-                        {"type": "image_url", "image_url": {"url": temp_path}}
+                        {"type": "image_url", "image_url": {"url": data_url}}
                     ]
                 }
             ]
