@@ -6,7 +6,7 @@ st.set_page_config(page_title="Financial Literacy Expense Analyzer")
 st.title("💸 Financial Literacy Expense Analyzer")
 
 st.warning(
-    "🚫 Do NOT upload or include any personal or sensitive information such as Social Security Numbers, bank account numbers, routing numbers, passwords, or home address."
+    "Do NOT upload or include any personal or sensitive information such as Social Security Numbers, bank account numbers, routing numbers, passwords, or home address."
 )
 
 if "OPENAI_API_KEY" not in st.secrets:
