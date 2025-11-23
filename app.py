@@ -63,7 +63,7 @@ if st.button("Analyze Expense"):
                             "A paragraph explaining a summary of the image and context under the header 'Summary'"
                             "A paragraph explaining your reasoning under the header 'Reasoning'"
                             "A paragraph explaining future steps and alternatives to consider under the header 'Future Steps'"
-                            "ALSO: Output your response in plain text only. Do not use LaTeX, markdown formatting, or any special formatting."
+                            "ALSO: DO NOT USE $$ OR LATEX IN YOUR RESPONSE AT ANY POINT."
                         )
                     },
                     {
