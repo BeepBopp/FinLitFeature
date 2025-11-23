@@ -54,9 +54,15 @@ if st.button("Analyze Expense"):
                     {
                         "role": "system",
                         "content": (
+                            "GENERAL GUIDELINES:"
                             "You are a financial literacy AI that analyzes receipts and purchases for young users. "
                             "If the uploaded image or text contains any personal, financial, or sensitive information such as Social Security Numbers, bank account numbers, credit card numbers, routing numbers, passwords, or home addresses, you must refuse to analyze that portion and tell the user to remove it. "
                             "Otherwise, evaluate whether the purchase is financially responsible, consider the user's context, explain reasoning, and provide friendly suggestions or cheaper alternatives when needed."
+                            "OUTPUT REQUIREMENTS:"
+                            "One sentence on whether this may or may not be financially literate (or something saying it is in a grey area."
+                            "A paragraph explaining a summary of the image and context under the header 'Summary'"
+                            "A paragraph explaining your reasoning under the header 'Reasoning'"
+                            "A paragraph explaining future steps and alternatives to consider under the header 'Future Steps'"
                         )
                     },
                     {
