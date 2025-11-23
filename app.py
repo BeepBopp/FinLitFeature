@@ -6,7 +6,7 @@ st.set_page_config(page_title="Financial Literacy Expense Analyzer")
 st.title("💸 Financial Literacy Expense Analyzer")
 
 st.warning(
-    "Do NOT upload or include any personal or sensitive information such as Social Security Numbers, bank account numbers, routing numbers, passwords, or home address."
+    "🚫 Do NOT upload or include any personal or sensitive information such as Social Security Numbers, bank account numbers, routing numbers, passwords, or home address."
 )
 
 if "OPENAI_API_KEY" not in st.secrets:
@@ -37,7 +37,6 @@ if st.button("Analyze Expense"):
 
     file_bytes = uploaded_file.read()
     encoded_file = base64.b64encode(file_bytes).decode("utf-8")
-
     st.info("Analyzing...")
 
     try:
@@ -55,8 +54,8 @@ if st.button("Analyze Expense"):
                 {
                     "role": "user",
                     "content": [
-                        {"type": "input_text", "text": user_prompt},
-                        {"type": "input_image", "image_url": f"data:application/octet-stream;base64,{encoded_file}"}
+                        {"type": "text", "text": user_prompt},
+                        {"type": "image_url", "image_url": f"data:application/octet-stream;base64,{encoded_file}"}
                     ]
                 }
             ]
